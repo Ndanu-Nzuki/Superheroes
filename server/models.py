@@ -6,7 +6,6 @@ class Hero(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), nullable=False)
     super_name = db.Column(db.String(80), nullable=False)
-    ##power_name = db.Column(db.String(80), nullable=False)
     
     hero_powers = db.relationship('HeroPower', back_populates='hero', cascade="all, delete-orphan")
 
