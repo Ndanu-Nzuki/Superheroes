@@ -1,4 +1,8 @@
 # Superheroes
-This is a Flask-based supeheroes API, for managing superheroes and their powers. (The seed.py file use an example of the Incredibles to populate our API.)
+This is a Flask-based supeheroes API, for managing superheroes and their powers. You can retrieve superhero information, update power descriptions, and create associations between heroes and their powers. (The seed.py file use an example of the Incredibles to populate our API plus the)
 
-1. Clone the repository to your local machine and install the necessary dependencies.
+1. To run this application you will need Python 3.8 or later, Flask, SQLite, SQLAlchemy, Postman and Flask-migrate. Clone the repository to your local machine and install the necessary dependencies. Set environment using "export FLASK_APP=server.app" then run the database igrations using "flask db upgrade". You can proceed to run the application using "flask run".
+
+2. Routes available are GET, PATCH and POST. The get is run on the browser and returns json data of requested data, you can GET using /heroes for all heroes, /heroes/<int:id> for a specific hero that matches the id, /powers for all powers and /powers/<int:id> for a specific power.
+The POST and PATCH requests will be run from Postman. For POST request, open Postman and create a new POST request. Enter the API endpoint (e.g., http://127.0.0.1:5000/hero_powers). Select the Body tab, choose raw, and set the format to JSON Paste the above JSON request body. Click Send. When you create a HeroPower successfully, you should receive a response with the newly created HeroPower object and a status code of 201.
+For PATCH requests Open Postman and create a new PATCH request. Enter your API endpoint (e.g., http://127.0.0.1:5000/powers/1). Select the Body tab, choose raw, and set the format to JSON. Paste the above JSON request body. Click Send. Successful PATCH Response: When you successfully update a power, you should receive the updated power object with a status code of 200.
