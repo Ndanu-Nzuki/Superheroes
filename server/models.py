@@ -15,7 +15,6 @@ class Hero(db.Model):
             'id': self.id,
             'name': self.name,
             'super_name': self.super_name,
-            'powers': [hp.power.to_dict() for hp in self.hero_powers]
         }
 
 class Power(db.Model):
